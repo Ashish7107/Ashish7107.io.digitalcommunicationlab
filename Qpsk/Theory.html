@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="maincss.css">
+    <link 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+</head>
+<body bgcolor="#ffffff">
+<div>
+	<div id = "header"><img src="/images/dpu_logo.png" alt="" ">
+		<p >Dr. D.Y Patil Institiute Of Technology ,Pimpri(411018)</p></div>
+			<div id="SubHeading">
+				
+				<b>Digital Communication Laboratory</b>
+				<i class="fa fa-bars" onclick="showMenu()" style="float: right;"></i>
+                
+	</div>
+
+	<div id="nav-placeholder">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+  	  	<ul>
+  	  <li ><a  href="Broad Goal.html">Broad Goal</a></li>
+	  <li ><a  href="LO.html">Learning Objectives</a></li>
+	  <li><a href="Theory.html">Theory</a></li>
+	  <li><a href="Pre Test.html">Pre Test</a></li>
+	  <li><a href="Procedure.html">Procedure</a></li>
+	  <li><a href="drag_element.html">Simulator</a> </li>
+	  <li><a href="Post Test.html">Post Test</a></li>
+	  <li><a href="References.html">References</a></li>
+	</ul>
+	
+  	</div>
+	 
+     
+  		
+  	<div id="whole_body" >
+	  	<div style="font-size:18px; text-align:left;">
+    		 <b><h2 style="text-align:center;"> Theory(QPSK) </h2></b>
+    	<p>To transmit digital data on analog lines or even into space, modulation of analog signal is required. Simplest way is BPSK, where one phase of carrier is transmitted for ‘1’ and inverted carrier is transmitted for digital ‘0’. Here if bit rate is ‘Tb’ then bandwidth required is ‘2Tb’. To reduce this bandwidth requirement QPSK can be used. For QPSK bandwidth is ‘Tb’ i.e half that of BPSK.</p>
+    	<p>
+    		QPSK techniques come under carrier modulation type. Here i/p to the transmitter is digital data, in between processing is in analog form & finally o/p of receiver is again digital data same as fed to transmitter.</p>
+
+    		<p>‘Q’ in ‘QPSK’ means quadrature i.e 4 four phases of carrier are transmitted depending upon bit pattern. Incoming bit pattern is divided into ODD & EVEN bit patterns. Odd pattern is multiplied by sine wave, & even wave is multiplied by cos wave. Sine & cos waves are 90 degree phase shifted. Now resulting two PSKs are added & we get vector addition o/p i.e if both bit is ‘1’ we get 45 degree phase shifted carrier. If odd bit is 1 and even bit is 0 we get 135 degree phase carrier. If odd bit is 0 & even also 0 we get 225 degree. If odd bit is 0 & even bit is 1 we get 315 degree.
+			</p>
+    		<p>In QPSK, two consecutive bits are stored & for resulting four combinations (4) different phases of carrier are transmitted. By using ‘D’ flip-flop type arrangement incoming bit pattern is divided into two bit patterns viz. odd & even pattern, for obtaining this, basic clock whose frequency is ‘fb’ is divided by two, resulting odd & even clock frequencies are ‘fb/2’ & they are complementary. Each bit is stored for ‘2Tb’ & even bit pattern will have bit no 2, 4, 6, etc stored for ‘2Tb’.</p>
+
+    		<p>Here active edges of, odd & even clocks are separated by time ‘Tb’. So out of two bits only one bit is changing after each ‘Tb’ period but every bit is there for 2Tb time; so in this offset QPSK system every time phase changes by 90 degree only.
+			</p>
+
+              <p>At receiver carrier is recovered from QPSK signal itself. This is synchronous reception. To recover carrier QPSK signal is raised to power four using analog multiplier. Then resulting signal is passed through bandpass filter whose center frequency is adjusted to 4 times carrier frequency. Then o/p of bandpass filter is divided by 4 to get carrier frequency. In this kit IC 1496 is used as analog multiplier.  </p>
+
+              <p>Then QPSK signal is multiplied by ‘SINE & COS’ carrier waves. As a result we get odd & even patterns after filtering & integrating multiplier outputs. Now by combining these two patterns we get original bit patterns. This is done by using switch.
+</p>
+
+<p>To observe QPSK, we have given two bit patterns so that on analog CRO we can observe the wave forms. Here carrier phase changes every time ‘tb’ depending upon odd & even bit combination. It is difficult to observe this on analog CRO. Details of these phase changes are shown in diagram attached. To observe QPSK we can use lissageous patterns. If we connect SINE wave to one channel & COS wave to other channel & press ‘XY’ button of CRO we get circle on screen.</p>
+
+<div class="bpsk_theory_image"><img src="images/QPSK_Theory_1.png"  alt="Vlab"  ;></div>
+
+
+<p>Now if we connect SINE & its associated PSK signal to two channels & press ‘XY’ mode buttons we get two crossed lines.<p>
+	
+	<div class="bpsk_theory_image"><img src="images/QPSK_Theory_2.png"  alt="Vlab"  ;></div>
+
+	
+
+	<p>If ‘SINE’ & ‘QPSK’ signals are connected to two channels, on ‘XY’ mode we get two crossed ellipses. This is because for 45, 135, 225, 315 degree we get ellipse a lissageous fig. 
+</p>
+
+<div class="bpsk_theory_image"><img src="images/QPSK_Theory_3.png"  alt="Vlab"  ;></div>
+
+
+
+<p>Also at transmitter observe that ’SINE’, ’COS’ wave amplitudes are lesser than resulting ‘QPSK’ wave because of vector addition.<p>
+
+	<p>We are doing this complex processing to save on bandwidth requirement of the system. This can be observed on CRO also. Observe bit pattern on CRO along with odd or even bit pattern, you will come to know that odd or even bit pattern frequency is lesser than original bit pattern frequency.</p>
+
+	<h3>Transmitter:</h3>
+	<img src="images/QPSK_Theory_4.png" alt="Vlab" ;>
+
+	<br>
+     <h3>Reciever:</h3>
+	<img src="images/QPSK_Theory_5.png" alt="Vlab" ;>
+
+	
+
+    	</div>
+    	
+	
+   <script>
+       var navLinks =document.getElementById("nav-placeholder");
+       function showMenu(){
+           navLinks.style.right ="0";
+
+       }
+       function hideMenu(){
+        navLinks.style.right ="-200px";
+
+       }
+    
+   </script>
+
+   <!-- Footer -->
+ <footer class="footer foot-color">
+    <div class="container grid grid-foot">
+        
+        <div>
+        
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+				<li><a href="Theory.html">Bpsk Modulation</a></li>
+				<li><a href="../Qpsk/Theory.html">Qpsk Modulation</a></li>
+				<li><a href="../dsss/Theory.html">DSSS</a></li>
+			   <li><a href="../ofdm/Theory.html">OFDM</a></li>
+            </ul>
+        
+        </div>
+
+        <div>
+            <p>Electronics and Telecommunication Engineering                     Copyright &copy; 2022</p>
+            
+        
+        </div>
+        
+    </div>
+</footer>
+  </body>
+</html>

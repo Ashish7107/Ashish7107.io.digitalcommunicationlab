@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Simuator</title>
+	<link rel="stylesheet" type="text/css" href="maincss.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	 <!-- Load plotly.js into the DOM -->
+	 <script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+    <link 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+</head>
+<body bgcolor="#ffffff">
+<div>
+	<div id = "header"><img src="/images/dpu_logo.png" alt="" ">
+		<p >Dr. D.Y Patil  Institiute Of Technology ,Pimpri(411018)</p></div>
+			<div id="SubHeading">
+				
+				<b>Digital Communication Laboratory</b>
+				<i class="fa fa-bars" onclick="showMenu()" style="float: right;"></i>
+                
+	</div>
+
+	<div id="nav-placeholder">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+  	  	<ul>
+  	  <li ><a  href="Broad Goal.html">Broad Goal</a></li>
+	  <li ><a  href="LO.html">Learning Objectives</a></li>
+	  <li><a href="Theory.html">Theory</a></li>
+	  <li><a href="Pre Test.html">Pre Test</a></li>
+	  <li><a href="Procedure.html">Procedure</a></li>
+	  <li><a href="drag_element.html">Simulator</a> </li>
+	  <li><a href="Post Test.html">Post Test</a></li>
+	  <li><a href="References.html">References</a></li>
+	</ul>
+	
+  	</div>
+<br>
+<div class="column1" style="height: 450px;">
+<h1 ><u>Component's Description</u></h1>
+<p id="blurtext" style=" 
+text-shadow: 0 0 2px #000;"> >&nbsp; &nbsp;>&nbsp; &nbsp;>&nbsp; &nbsp;>&nbsp; &nbsp;Click on a component to see it's details.</p>
+<div id="text2">
+  
+</div>  
+<div id="text">
+  <h5 >&nbsp; &nbsp;RECIEVER: </h5>
+  <ul style="list-style-type:circle;">
+    <li><p>The QPSK Modulator uses a bit-splitter, two multipliers with local oscillator, a 2-bit serial to parallel converter, and a summer circuit. Following is the block diagram for the same.</p>	</li>
+   <img class="drag_element_img" src="images/qpsk_modulator.png" alt="">
+   <li><p>At the modulator’s input, the message signal’s even bits (i.e., 2nd bit, 4th bit, 6th bit, etc.) and odd bits (i.e., 1st bit, 3rd bit, 5th bit, etc.) are separated by the bits splitter and are multiplied with the same carrier to generate odd BPSK (called as PSKI) and even BPSK (called as PSKQ). The PSKQ signal is anyhow phase shifted by 90° before being modulated.
+    The QPSK waveform for two-bits input is as follows, which shows the modulated result for different instances of binary inputs.
+    </p></li>
+  </ul>  
+  
+
+</div>
+
+
+<div id="text1">
+  <h5 >&nbsp; &nbsp; TRANSMITTER</h5>
+  <ul style="list-style-type:circle;">
+    <li><p>The QPSK Demodulator uses two product demodulator circuits with local oscillator, two band pass filters, two integrator circuits, and a 2-bit parallel to serial converter. Following is the diagram for the same.</p></li>
+    <img src="images/qpsk_demodulator.png" alt="">
+    <li><p>The two product detectors at the input of demodulator simultaneously demodulate the two BPSK signals. The pair of bits are recovered here from the original data. These signals after processing, are passed to the parallel to serial converter.</p></li>
+  </ul>  
+  
+
+</div>
+
+</div>
+
+
+
+</h3>
+
+
+
+<div class="column2" style="height: 600px;">
+  <h3><u>Components</u><br><br>
+<button type="button"
+  onclick="show1()" id="btnID ">
+ <h5>RECIEVER</h5>
+</button>
+<br><br>
+<button type="button"
+  onclick="show2()" id="btnID ">
+ <h5>TRANSMITTER</h5>
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+ 
+
+ 
+<a href="graph.html" class="button"> Plot Graph</a>
+
+
+
+<script src="script.js">
+  
+</script>
+
+<script>
+  var navLinks =document.getElementById("nav-placeholder");
+  function showMenu(){
+      navLinks.style.right ="0";
+
+  }
+  function hideMenu(){
+   navLinks.style.right ="-200px";
+
+  }
+
+</script>
+
+
+
+
+ <!-- Footer -->
+ <footer class="footer foot-color" ">
+  <div class="container grid grid-foot">
+      
+      <div>
+      
+          <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Bpsk/Theory.html">Bpsk Modulation</a></li>
+				      <li><a href="Theory.html">Qpsk Modultion</a></li>
+              <li><a href="../dsss/Theory.html">DSSS</a></li>
+                <li><a href="../ofdm/Theory.html">OFDM</a></li>
+          </ul>
+      
+      </div>
+
+      <div>
+          <p>Electronics and Telecommunication Engineering                     Copyright &copy; 2022</p>
+          
+      
+      </div>
+      
+  </div>
+</footer>
+
+</body>
+</html>
+
