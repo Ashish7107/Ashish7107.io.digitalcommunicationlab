@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Simulator</title>
+	<link rel="stylesheet" type="text/css" href="maincss.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	 <!-- Load plotly.js into the DOM -->
+	 <script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+    <link 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+</head>
+<body bgcolor="#ffffff">
+<div>
+	<div id = "header"><img src="/images/dpu_logo.png" alt="" ">
+		<p >Dr. D.Y Patil  Institiute Of Technology ,Pimpri(411018)</p></div>
+			<div id="SubHeading">
+				
+				<b>Digital Communication Laboratory</b>
+				<i class="fa fa-bars" onclick="showMenu()" style="float: right;"></i>
+                
+	</div>
+
+	<div id="nav-placeholder">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+  	  	<ul>
+  	  <li ><a  href="Broad Goal.html">Broad Goal</a></li>
+	  <li ><a  href="LO.html">Learning Objectives</a></li>
+	  <li><a href="Theory.html">Theory</a></li>
+	  <li><a href="Pre Test.html">Pre Test</a></li>
+	  <li><a href="Procedure.html">Procedure</a></li>
+	  <li><a href="drag_element.html">Simulator</a> </li>
+	  <li><a href="Post Test.html">Post Test</a></li>
+	  <li><a href="References.html">References</a></li>
+	</ul>
+	
+  	</div>
+<br>
+<div class="column1" style="height: 450px;">
+<h1 ><u>Component's Description</u></h1>
+<p id="blurtext" style=" 
+text-shadow: 0 0 2px #000;"> >&nbsp; &nbsp;>&nbsp; &nbsp;>&nbsp; &nbsp;>&nbsp; &nbsp;Click on a component to see it's details.</p>
+<div id="text2">
+  
+</div>  
+<div id="text">
+  <h5 >&nbsp; &nbsp;RECIEVER: </h5>
+  <ul style="list-style-type:circle;">
+    <li><p>The receiver picks up the signal r(t), which is then quadrature-mixed down to baseband using cosine and sine waves at the carrier frequency. This also creates signals centered on  2f_{c}, so low-pass filters are used to reject these. The baseband signals are then sampled and digitised using analog-to-digital converters (ADCs), and a forward FFT is used to convert back to the frequency domain.
+
+      This returns  N parallel streams, each of which is converted to a binary stream using an appropriate symbol detector. These streams are then re-combined into a serial stream, [n], which is an estimate of the original binary stream at the transmitter.</p>	</li>
+   <img class="drag_element_img" src="images/reciever.PNG" alt="">
+   <h4>FFT</h4>
+   <li><p>A fast Fourier transform (FFT) is an algorithm that computes the discrete Fourier transform (DFT) of a sequence, or its inverse (IDFT). Fourier analysis converts a signal from its original domain (often time or space) to a representation in the frequency domain and vice versa. The DFT is obtained by decomposing a sequence of values into components of different frequencies. This operation is useful in many fields, but computing it directly from the definition is often too slow to be practical. An FFT rapidly computes such transformations by factorizing the DFT matrix into a product of sparse (mostly zero) factors.As a result, it manages to reduce the complexity of computing the DFT from O(N2), which arises if one simply applies the definition of DFT, to O(N\log N), where N is the data size. The difference in speed can be enormous, especially for long data sets where N may be in the thousands or millions. In the presence of round-off error, many FFT algorithms are much more accurate than evaluating the DFT definition directly or indirectly. There are many different FFT algorithms based on a wide range of published theories, from simple complex-number arithmetic to group theory and number theory.
+    </p></li>
+  </ul>  
+  
+
+</div>
+
+
+<div id="text1">
+  <h5 >&nbsp; &nbsp; TRANSMITTER</h5>
+  <ul style="list-style-type:circle;">
+    
+    <img src="images/Transmitter.PNG" alt="">
+    <li><p>According to given in Figure, we have to implement the OFDM block by block and finally interconnect all of them together to form complete OFDM circuit.</p></li>
+    <li><h4>QAM Modulation:</h4>
+      <img src="images/QAM_Modulation.PNG" alt="">
+    <p>Presented system uses QAM modulation so 16 constellation points are used. To have different constellation values data is divided in groups of 4 bits each and convert that binary code to gray code for better accuracy. Upper two bits are used for imaginary number and lower two bits are used to denote real number</p></li>
+    <li><h4>Inverse Fast Fourier Transform (IFFT)</h4>
+      <p>Initially carrier bank generating a set of subcarriers was necessary for OFDM in conventional or analogue approach. Each subcarrier was modulated with a constellation decided by bit combination, but this approach made system bulky and costlier. So to make system digital, simple, cheap, and efficient IFFT is being used. A stepwise implementation of butterfly diagram is done in this algorithm. Radix-2 Decimation-in-time (DIF) IFFT is implemented in this algorithm. Different procedures and operations are done to achieve this. In above figure the basic butterfly unit for the radix-2 IFFT algorithm is shown.</p>
+
+    <img src="images/IFFT1.PNG" alt=""></li>
+    <p>Decimation-In-Time IFFT</p>
+    <img src="images/IFFT2.PNG" alt="">
+    <p>Decimation-In-Frequency IFFT</p>
+  </ul>  
+  
+
+</div>
+
+</div>
+
+
+
+</h3>
+
+
+
+<div class="column2" style="height: 1550px;">
+  <h3><u>Components</u><br><br>
+<button type="button"
+  onclick="show1()" id="btnID ">
+ <h5>RECIEVER</h5>
+</button>
+<br><br>
+<button type="button"
+  onclick="show2()" id="btnID ">
+ <h5>TRANSMITTER:</h5>
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+ 
+
+ 
+<a href="graph.html" class="button"> Plot Graph</a>
+
+
+
+<script src="script.js">
+  
+</script>
+
+<script>
+  var navLinks =document.getElementById("nav-placeholder");
+  function showMenu(){
+      navLinks.style.right ="0";
+
+  }
+  function hideMenu(){
+   navLinks.style.right ="-200px";
+
+  }
+
+</script>
+
+
+
+
+ <!-- Footer -->
+ <footer class="footer foot-color" ">
+  <div class="container grid grid-foot">
+      
+      <div>
+      
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Bpsk/Theory.html">Bpsk Modulation</a></li>
+            <li><a href="../Qpsk/Theory.html">Qpsk Modulation</a></li>
+            <li><a href="../dsss/Theory.html">DSSS</a></li>
+            <li><a href="Theory.html">OFDM</a></li>
+          </ul>
+      
+      </div>
+
+      <div>
+          <p>Electronics and Telecommunication Engineering                     Copyright &copy; 2022</p>
+          
+      
+      </div>
+      
+  </div>
+</footer>
+
+</body>
+</html>
+
