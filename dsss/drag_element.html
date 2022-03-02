@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Simulator</title>
+	<link rel="stylesheet" type="text/css" href="maincss.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	 <!-- Load plotly.js into the DOM -->
+	 <script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+    <link 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+</head>
+<body bgcolor="#ffffff">
+<div>
+	<div id = "header"><img src="/images/dpu_logo.png" alt="" ">
+		<p >Dr. D.Y Patil  Institiute Of Technology ,Pimpri(411018)</p></div>
+			<div id="SubHeading">
+				
+				<b>Digital Communication Laboratory</b>
+				<i class="fa fa-bars" onclick="showMenu()" style="float: right;"></i>
+                
+	</div>
+
+	<div id="nav-placeholder">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+  	  	<ul>
+  	  <li ><a  href="Broad Goal.html">Broad Goal</a></li>
+	  <li ><a  href="LO.html">Learning Objectives</a></li>
+	  <li><a href="Theory.html">Theory</a></li>
+	  <li><a href="Pre Test.html">Pre Test</a></li>
+	  <li><a href="Procedure.html">Procedure</a></li>
+	  <li><a href="drag_element.html">Simulator</a> </li>
+	  <li><a href="Post Test.html">Post Test</a></li>
+	  <li><a href="References.html">References</a></li>
+	</ul>
+	
+  	</div>
+<br>
+<div class="column1" style="height: 450px;">
+<h1 ><u>Component's Description</u></h1>
+<p id="blurtext" style=" 
+text-shadow: 0 0 2px #000;"> >&nbsp; &nbsp;>&nbsp; &nbsp;>&nbsp; &nbsp;>&nbsp; &nbsp;Click on a component to see it's details.</p>
+<div id="text2">
+  
+</div>  
+<div id="text">
+  <h5 >&nbsp; &nbsp;RECIEVER: </h5>
+  <ul style="list-style-type:circle;">
+    
+   <img class="drag_element_img" src="images/Reciever.png" alt="">
+   <h4>BPSK Demodulation</h4>
+   <li><p>The block diagram of BPSK demodulator consists of a mixer with local oscillator circuit, a bandpass filter, a two-input detector circuit. The diagram is as follows.
+    </p></li>
+    <img src="images/BPSK_demodulator.jpg" alt="">
+    <li><p>y recovering the band-limited message signal, with the help of the mixer circuit and the band pass filter, the first stage of demodulation gets completed. The base band signal which is band limited is obtained and this signal is used to regenerate the binary message bit stream.
+
+      In the next stage of demodulation, the bit clock rate is needed at the detector circuit to produce the original binary message signal. If the bit rate is a sub-multiple of the carrier frequency, then the bit clock regeneration is simplified. To make the circuit easily understandable, a decision-making circuit may also be inserted at the 2nd stage of detection.</p></li>
+      <h4>Pseudo Noise bit source:</h4>
+      <li><p>PN sequences are usually generated using Linear Feedback Shift Registers
+        (LFSR) based on Galois Field arithmetic. The length of the PN sequence
+        depends on the number of shift register stages. If there are m shift registers used,
+        the maximum possible PN sequence length.</p></li>
+  </ul>  
+  
+
+</div>
+
+
+<div id="text1">
+  <h5 >&nbsp; &nbsp; TRANSMITTER</h5>
+  <ul style="list-style-type:circle;">
+    
+    <img src="images/Transmitter.PNG" alt="">
+    
+    <li><h4>BPSK Modulation:</h4>
+      <p>The block diagram of Binary Phase Shift Keying consists of the balance modulator which has the carrier sine wave as one input and the binary sequence as the other input. Following is the diagrammatic representation.</p>
+      <img src="images/Circuit_Diagram.jpg" alt="">
+    <p> The modulation of BPSK is done using a balance modulator, which multiplies the two signals applied at the input. For a zero binary input, the phase will be 0° and for a high input, the phase reversal is of 180°.</p></li>
+    <li><h4>Direct-sequence spread-spectrum transmissions </h4>
+      <p>Direct-sequence spread-spectrum transmissions multiply the data being transmitted by a pseudorandom spreading sequence that has a much higher bit rate than the original data rate. The resulting transmitted signal resembles bandlimited white noise, like an audio recording of "static". However, this noise-like signal is used to exactly reconstruct the original data at the receiving end, by multiplying it by the same spreading sequence (because 1 × 1 = 1, and −1 × −1 = 1). This process, known as despreading, is mathematically a correlation of the transmitted spreading sequence with the spreading sequence that the receiver already knows the transmitter is using. After the despreading, the signal-to-noise ratio is approximately increased by the spreading factor, which is the ratio of the spreading-sequence rate to the data rate.</p>
+
+    
+  </ul>  
+  
+
+</div>
+
+</div>
+
+
+
+</h3>
+
+
+
+<div class="column2" style="height: 1550px;">
+  <h3><u>Components</u><br><br>
+<button type="button"
+  onclick="show1()" id="btnID ">
+ <h5>RECIEVER</h5>
+</button>
+<br><br>
+<button type="button"
+  onclick="show2()" id="btnID ">
+ <h5>TRANSMITTER:</h5>
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+ 
+
+ 
+<a href="graph.html" class="button"> Plot Graph</a>
+
+
+
+<script src="script.js">
+  
+</script>
+
+<script>
+  var navLinks =document.getElementById("nav-placeholder");
+  function showMenu(){
+      navLinks.style.right ="0";
+
+  }
+  function hideMenu(){
+   navLinks.style.right ="-200px";
+
+  }
+
+</script>
+
+
+
+
+ <!-- Footer -->
+ <footer class="footer foot-color" ">
+  <div class="container grid grid-foot">
+      
+      <div>
+      
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Bpsk/Theory.html">Bpsk Modulation</a></li>
+            <li><a href="../Qpsk/Theory.html">Qpsk Modulation</a></li>
+            <li><a href="Theory.html">DSSS</a></li>
+            <li><a href="../ofdm/Theory.html">OFDM</a></li>
+          </ul>
+      
+      </div>
+
+      <div>
+          <p>Electronics and Telecommunication Engineering                     Copyright &copy; 2022</p>
+          
+      
+      </div>
+      
+  </div>
+</footer>
+
+</body>
+</html>
+
