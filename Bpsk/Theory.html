@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Theory_Bpsk</title>
+	<link rel="stylesheet" type="text/css" href="maincss.css">
+    <link 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+</head>
+<body bgcolor="#ffffff">
+<div>
+	<div id = "header"><img src="/images/dpu_logo.png" alt="" ">
+		<p >Dr. D.Y Patil Institiute Of Technology ,Pimpri(411018)</p></div>
+			<div id="SubHeading">
+				
+				<b>Digital Communication Laboratory</b>
+				<i class="fa fa-bars" onclick="showMenu()" style="float: right;"></i>
+                
+	</div>
+
+	<div id="nav-placeholder">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+  	  	<ul>
+  	  <li ><a  href="Broad Goal.html">Broad Goal</a></li>
+	  <li ><a  href="LO.html">Learning Objectives</a></li>
+	  <li><a href="Theory.html">Theory</a></li>
+	  <li><a href="Pre Test.html">Pre Test</a></li>
+	  <li><a href="Procedure.html">Procedure</a></li>
+	  <li><a href="drag_element.html">Simulator</a> </li>
+	  <li><a href="Post Test.html">Post Test</a></li>
+	  <li><a href="References.html">References</a></li>
+	</ul>
+	
+  	</div>
+	 
+     
+  		
+  	<div id="whole_body" >
+	  	<div style="font-size:18px; text-align:center;">
+    		 <b><h2> Theory (BPSK)</h2></b>
+    	<p><b> Phase Shift Keying PSK</b></p>
+    	<p>
+    		PSK is the digital modulation technique in which the phase of the carrier signal is changed by varying the sine and cosine inputs at a particular time. PSK technique is widely used for wireless LANs, bio-metric, contactless operations, along with RFID and Bluetooth communications. </p>
+
+    		<p>PSK is of two types, depending upon the phases the signal gets shifted. They are −
+    			<p>
+    		<p><b>Binary Phase Shift Keying BPSK: BPSK</b></p>
+
+    		<p>This is also called as 2-phase PSK or Phase Reversal Keying. In this technique, the sine wave carrier takes two phase reversals such as 0° and 180°.
+              BPSK is basically a Double Side Band Suppressed Carrier DSBSCDSBSC modulation scheme, for message being the digital information.
+              <p>
+
+              <p><b>Quadrature Phase Shift Keying QPSK:QPSK</b></p>
+
+              <p>This is the phase shift keying technique, in which the sine wave carrier takes four phase reversals such as 0°, 90°, 180°, and 270°.
+If this kind of techniques are further extended, PSK can be done by eight or sixteen values also, depending upon the requirement.
+</p>
+
+<p><b>BPSK Modulator</b></p>
+<p>The block diagram of Binary Phase Shift Keying consists of the balance modulator which has the carrier sine wave as one input and the binary sequence as the other input. Following is the diagrammatic representation.<p>
+	<img src="images/Circuit_Diagram.jpg" alt="Vlab" ;>
+
+	<p>The modulation of BPSK is done using a balance modulator, which multiplies the two signals applied at the input. For a zero binary input, the phase will be 0° and for a high input, the phase reversal is of 180°.
+Following is the diagrammatic representation of BPSK Modulated output wave along with its given input.
+</p>
+<img src="images/Waves_Diagram.jpg" alt="Vlab" ;>
+<p>The output sine wave of the modulator will be the direct input carrier or the inverted 180°phaseshifted180°phaseshifted input carrier, which is a function of the data signal.<p>
+	<p><b>BPSK Demodulator</b></p>
+
+	<p>The block diagram of BPSK demodulator consists of a mixer with local oscillator circuit, a bandpass filter, a two-input detector circuit. The diagram is as follows.</p>
+  <img src="images/BPSK_demodulator.jpg" alt="Vlab" >
+
+  <p>By recovering the band-limited message signal, with the help of the mixer circuit and the band pass filter, the first stage of demodulation gets completed. The base band signal which is band limited is obtained and this signal is used to regenerate the binary message bit stream.</p>
+
+  <p>In the next stage of demodulation, the bit clock rate is needed at the detector circuit to produce the original binary message signal. If the bit rate is a sub-multiple of the carrier frequency, then the bit clock regeneration is simplified. To make the circuit easily understandable, a decision-making circuit may also be inserted at the 2nd stage of detection.</p>
+
+    	</div>
+    	
+	
+   <script>
+       var navLinks =document.getElementById("nav-placeholder");
+       function showMenu(){
+           navLinks.style.right ="0";
+
+       }
+       function hideMenu(){
+        navLinks.style.right ="-200px";
+
+       }
+    
+   </script>
+
+
+
+
+
+
+
+
+
+ <!-- Footer -->
+ <footer class="footer foot-color">
+    <div class="container grid grid-foot">
+        
+        <div>
+        
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="Bpsk/Theory.html">Bpsk Modulation</a></li>
+				<li><a href="../Qpsk/Theory.html">Qpsk Modulation</a></li>
+				<li><a href="../dsss/Theory.html">DSSS</a></li>
+                <li><a href="../ofdm/Theory.html">OFDM</a></li>
+            </ul>
+        
+        </div>
+
+        <div>
+            <p>Electronics and Telecommunication Engineering                     Copyright &copy; 2022</p>
+            
+        
+        </div>
+        
+    </div>
+</footer>
+  </body>
+</html>

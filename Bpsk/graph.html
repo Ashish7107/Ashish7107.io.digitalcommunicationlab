@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Graph</title>
+    <link rel="stylesheet" type="text/css" href="maincss.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Load plotly.js into the DOM -->
+    <script src="https://cdn.plot.ly/plotly-2.6.3.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body bgcolor="#ffffff">
+    <div>
+      <div id="header">
+        <img src="/images/dpu_logo.png" alt="" ">
+        <p>Dr. D.Y Patil Institiute Of Technology ,Pimpri(411018)</p>
+      </div>
+      <div id="SubHeading">
+        <b>Digital Communication Laboratory</b>
+        <i class="fa fa-bars" onclick="showMenu()" style="float: right"></i>
+      </div>
+
+      <div id="nav-placeholder">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="Broad Goal.html">Broad Goal</a></li>
+          <li><a href="LO.html">Learning Objectives</a></li>
+          <li><a href="Theory.html">Theory</a></li>
+          <li><a href="Pre Test.html">Pre Test</a></li>
+          <li><a href="Procedure.html">Procedure</a></li>
+          <li><a href="drag_element.html">Simulator</a></li>
+          <li><a href="Post Test.html">Post Test</a></li>
+          <li><a href="References.html">References</a></li>
+        </ul>
+      </div>
+
+      <div id="whole_body">
+        <div style="text-align: center; padding-top: 5px">
+          <b>Graphical Representation</b>
+        </div>
+
+        <p>Amplitude of Carrier Signal=5.</p>
+        <p>Bit period=0.000001.</p>
+        <p>Enter 10 binary signals (example=1,0,1,1,1,1,0,0,1,1)</p>
+        <form id="form">
+          <!--<input type="text" id="xValues" placeholder="enter x values" >-->
+          <input
+            type="text"
+            id="yValues"
+            placeholder="enter ten binary signals"
+          />
+
+          <button class="button" id="submitBtn" type="submit">
+            Plot graph
+          </button>
+          <input class="button" type="reset" value="Reset" />
+        </form>
+        <script src="index.js"></script>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
+
+    <div id="myDiv0"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <div id="myDiv3"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <div id="myDiv2"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+    <script>
+      var navLinks = document.getElementById("nav-placeholder");
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer foot-color">
+      <div class="container grid grid-foot">
+        <div>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="Theory.html">Bpsk Modulation</a></li>
+            <li><a href="../Qpsk/Theory.html">Qpsk Modulation</a></li>
+            <li><a href="../dsss/Theory.html">DSSS</a></li>
+            <li><a href="../ofdm/Theory.html">OFDM</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p>
+            Electronics and Telecommunication Engineering Copyright &copy; 2022
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
